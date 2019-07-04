@@ -47,11 +47,14 @@ class MenuComponent extends Component {
                         </li>
                         <li> <Link className="app-menu__item" to="/admin/product"><i className="app-menu__icon fa fa-product-hunt"></i><span className="app-menu__label">Product</span></Link>
                            </li>
+                        
                            <li> <Link className="app-menu__item" to="/admin/category"><i className="app-menu__icon fa fa-archive"></i><span className="app-menu__label">Category</span></Link>
                            </li>
                            <li> <Link className="app-menu__item" to="/admin/shipper"><i className="app-menu__icon fa fa-user"></i><span className="app-menu__label">Shipper</span></Link>
                            </li>
                            <li> <Link className="app-menu__item" to="/admin/supplier"><i className="app-menu__icon fa fa-user"></i><span className="app-menu__label">Supplier</span></Link>
+                           </li>
+                           <li> <Link className="app-menu__item" to="/admin/product"><i className="app-menu__icon fa fa-user"></i><span className="app-menu__label">User</span></Link>
                            </li>
                         <li className="treeview"><a className="app-menu__item" href="#" data-toggle="treeview"><i className="app-menu__icon fa fa-file-text" /><span className="app-menu__label">Pages</span><i className="treeview-indicator fa fa-angle-right" /></a>
                             <ul className="treeview-menu">
