@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 class ShipperRow extends Component {
+    deleteDataClick = (id) => {
+        this.props.deleteButtonClick(id);
+    }
     render() {
-        deleteDataClick = (id) => {
-            this.props.deleteButtonClick(id);
-        }
         return (
             < tr >
                 <td>{this.props.id}</td>

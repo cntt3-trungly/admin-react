@@ -20,7 +20,7 @@ class ShipperDataService {
         return axios.get(`${INSTRUCTOR_API_URL}`);
     }
 
-    updateShipper(id, product) {
+    updateShipper(id, shipper) {
         //console.log('executed service')
         return axios.put(`${INSTRUCTOR_API_URL}/${id}`, shipper);
     }
