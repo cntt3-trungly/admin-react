@@ -1,33 +1,33 @@
 import axios from 'axios'
 
 const INSTRUCTOR = 'api/v1/suppliers'
-const PRODUCT_API_URL = 'http://localhost:8080'
-const INSTRUCTOR_API_URL = `${PRODUCT_API_URL}/${INSTRUCTOR}`
+const SUPPLIER_API_URL = 'http://localhost:8080'
+const INSTRUCTOR_API_URL = `${SUPPLIER_API_URL}/${INSTRUCTOR}`
 
-class ProductDataService {
+class SupplierDataService {
 
     createSupplier(name, product) {
         //console.log('executed service')
-        return axios.post(`${INSTRUCTOR_API_URL}/`, product);
+        return axios.post(`${INSTRUCTOR_API_URL}/`, supplier);
     }
 
-    retrieveProduct(id) {
+    retrieveSupplier(id) {
         return axios.get(`${INSTRUCTOR_API_URL}/${id}`);
     }
 
-    updateProduct(id, product) {
+    updateSupplier(id, product) {
         //console.log('executed service')
-        return axios.put(`${INSTRUCTOR_API_URL}/${id}`, product);
+        return axios.put(`${INSTRUCTOR_API_URL}/${id}`, supplier);
     }
 
-    retrieveAllProducts() {
+    retrieveAllSuppliers() {
         return axios.get(`${INSTRUCTOR_API_URL}`);
     }
 
-    deleteProduct(id) {
+    deleteSupplier(id) {
         return axios.delete(`${INSTRUCTOR_API_URL}/${id}`);
     }
 
 }
 
-export default new ProductDataService()
+export default new SupplierDataService()
