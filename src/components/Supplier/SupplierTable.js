@@ -53,11 +53,10 @@ class SupplierTable extends Component {
         ))
 
 
-    render() {
-        console.log(this.state.suppliers);
-        
+    render() {       
         return (
             <div className="row">
+                <button className="btn btn-success float-right" >Add</button>
                 <div className="col-md-12">
                     <div className="tile">
                         <div className="tile-body">

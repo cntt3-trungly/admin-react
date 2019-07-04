@@ -53,6 +53,7 @@ class CategoryTable extends Component {
 
         return (
             <div className="row">
+                <button className="btn btn-success float-right" >Add</button>
                 <div className="col-md-12">
                     <div className="tile">
                         <div className="tile-body">
