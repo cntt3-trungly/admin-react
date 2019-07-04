@@ -1,17 +1,42 @@
 import React, { Component } from 'react';
-import SupplierData from './SupplierData';
 import SupplierRow from './SupplierRow';
+import SupplierDataService from '../../service/SupplierDataService'
 
 class SupplierTable extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
-            data: SupplierData
+            suppliers: [],
+            message: null
         }
+        this.refreshSuppliers = this.refreshSuppliers.bind(this)
+    }
+
+    componentDidMount() {
+        this.refreshSuppliers();
+    }
+
+    refreshSuppliers = () => {
+        SupplierDataService.retrieveAllSuppliers()//HARDCODED
+            .then(
+                response => {
+                    this.setState({ suppliers: response.data })
+                }
+            )
+    }
+
+    deleteSupplierClicked = (id) => {
+        SupplierDataService.deleteSupplier(id)
+            .then(
+                response => {
+                    this.setState({ message: `Delete of supplier ${id} Successful` })
+                    this.refreshSuppliers()
+                }
+            )
     }
 
     showSupplier = () =>
-        this.state.data.map((value, key) => (
+        this.state.suppliers.map((value, key) => (
             <SupplierRow
                 key={key}
                 id={value.id}
@@ -22,13 +47,15 @@ class SupplierTable extends Component {
                 postalCode={value.postalCode}
                 country={value.country}
                 phone={value.phone}
+                deleteButtonClick={(id) => this.deleteSupplierClicked(id)}
             />
 
         ))
 
 
     render() {
-
+        console.log(this.state.suppliers);
+        
         return (
             <div className="row">
                 <div className="col-md-12">

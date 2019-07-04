@@ -15,13 +15,14 @@ class ProductDataService {
         return axios.get(`${INSTRUCTOR_API_URL}/${id}`);
     }
 
-    updateProduct(id, product) {
-        //console.log('executed service')
-        return axios.put(`${INSTRUCTOR_API_URL}/${id}`, product);
-    }
 
     retrieveAllProducts() {
         return axios.get(`${INSTRUCTOR_API_URL}`);
+    }
+
+    updateProduct(id, product) {
+        //console.log('executed service')
+        return axios.put(`${INSTRUCTOR_API_URL}/${id}`, product);
     }
 
     deleteProduct(id) {

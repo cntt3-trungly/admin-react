@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 
 class SupplierRow extends Component {
+
+
+    deleteDataClick = (id) => {
+        this.props.deleteButtonClick(id);
+    }
+    
     render() {
         return (
-
-
-            <tr>
+            < tr >
                 <td>{this.props.id}</td>
                 <td>{this.props.supplierName}</td>
                 <td>{this.props.contactName}</td>
@@ -16,14 +20,14 @@ class SupplierRow extends Component {
                 <td>{this.props.phone}</td>
                 <td>
                     <a className="text-primary" >
-                        <i className="fa fa-edit"></i>
+                        <i className="fa fa-edit" ></i>
                     </a>
                     <a className="text-danger" >
-                        <i className="fa fa-trash"></i>
+                        <i className="fa fa-trash" onClick={(id) => this.deleteDataClick(this.props.id)}></i>
                     </a>
                 </td>
 
-            </tr>
+            </tr >
         );
     }
 }

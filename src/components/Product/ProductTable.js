@@ -31,7 +31,7 @@ class ProductTable extends Component {
             ProductDataService.deleteProduct(id)
                 .then(
                     response => {
-                        this.setState({ message: `Delete of course ${id} Successful` })
+                        this.setState({ message: `Delete of product ${id} Successful` })
                         this.refreshProducts()
                     }
                 )
@@ -56,7 +56,7 @@ class ProductTable extends Component {
             ))
 
         render() {
-
+            console.log(this.state.products);
 
 
             return (

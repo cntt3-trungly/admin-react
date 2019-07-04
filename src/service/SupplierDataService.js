@@ -6,7 +6,7 @@ const INSTRUCTOR_API_URL = `${SUPPLIER_API_URL}/${INSTRUCTOR}`
 
 class SupplierDataService {
 
-    createSupplier(name, product) {
+    createSupplier(name, supplier) {
         //console.log('executed service')
         return axios.post(`${INSTRUCTOR_API_URL}/`, supplier);
     }
@@ -15,13 +15,13 @@ class SupplierDataService {
         return axios.get(`${INSTRUCTOR_API_URL}/${id}`);
     }
 
-    updateSupplier(id, product) {
-        //console.log('executed service')
-        return axios.put(`${INSTRUCTOR_API_URL}/${id}`, supplier);
+    retrieveAllSuppliers() {    
+        return axios.get(`${INSTRUCTOR_API_URL}`);      
     }
 
-    retrieveAllSuppliers() {
-        return axios.get(`${INSTRUCTOR_API_URL}`);
+    updateSupplier(id, supplier) {
+        //console.log('executed service')
+        return axios.put(`${INSTRUCTOR_API_URL}/${id}`, supplier);
     }
 
     deleteSupplier(id) {
