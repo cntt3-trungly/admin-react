@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 
 class CategoryRow extends Component {
 
+    deleteDataClick = (id) => {
+        this.props.deleteButtonClick(id);
+    }
     render() {
         return (
             <tr>
@@ -13,7 +16,7 @@ class CategoryRow extends Component {
                         <i className="fa fa-edit" ></i>
                     </a>
                     <a className="text-danger" >
-                        <i className="fa fa-trash" ></i>
+                        <i className="fa fa-trash"  onClick={(id) => this.deleteDataClick(this.props.id)}></i>
                     </a>
                 </td>
 

@@ -1,25 +1,49 @@
 import React, { Component } from 'react';
-import CategoryData from './CategoryData';
 import CategoryRow from './CategoryRow';
+import CategoryDataService from '../../service/CategoryDataService'
 
 class CategoryTable extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: CategoryData
+            categories: [],
+            messages: null
         }
+        this.refreshCategories = this.refreshCategories.bind(this)
     }
 
-   
+    componentDidMount() {
+        this.refreshCategories();
+    }
+
+    refreshCategories = () => {
+        CategoryDataService.retrieveAllCategories()//HARDCODED
+            .then(
+                response => {
+                    this.setState({ categories: response.data })
+                }
+            )
+    }
+    deleteCategoryClicked = (id) => {
+        CategoryDataService.deleteCategory(id)
+            .then(
+                response => {
+                    this.setState({ message: `Delete of cảegory ${id} Successful` })
+                    this.refreshCategories()
+                }
+            )
+    }
+
+
 
     showCategory = () =>
-        this.state.data.map((value, key) => (
+        this.state.categories.map((value, key) => (
             <CategoryRow
                 key={key}
                 id={value.id}
                 categoryName={value.categoryName}
                 description={value.description}
-                
+                deleteButtonClick={(id) => this.deleteCategoryClicked(id)}
             />
 
         ))

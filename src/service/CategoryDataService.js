@@ -16,11 +16,11 @@ class CategoryDataService {
     }
 
 
-    retrieveAllCategorys() {
+    retrieveAllCategories() {
         return axios.get(`${INSTRUCTOR_API_URL}`);
     }
 
-    updateCategory(id, product) {
+    updateCategory(id, category) {
         //console.log('executed service')
         return axios.put(`${INSTRUCTOR_API_URL}/${id}`, category);
     }
