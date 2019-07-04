@@ -14,7 +14,6 @@ class RouterURL extends Component {
                 <Route path="/admin/product" exact component={Product} />
                 <Route path="/admin/index" exact component={Index} />
                 <Route path="/admin/supplier" exact component={Supplier} />
-
             </div>
         );
     }

@@ -5,6 +5,9 @@ class ProductRow extends Component {
     deleteDataClick = (id)=>{
         this.props.deleteButtonClick(id);
     }
+    updateDataClick = (id)=>{
+        this.props.updateButtonClick(id);
+    }
     render() {
         return (
 
@@ -23,7 +26,7 @@ class ProductRow extends Component {
 
                 <td>
                     <a className="text-primary" >
-                        <i className="fa fa-edit"></i>
+                        <i className="fa fa-edit"onClick={(id)=>this.updateDataClick(this.props.id)}></i>
                     </a>
                     <a className="text-danger" >
                         <i className="fa fa-trash" onClick={(id)=>this.deleteDataClick(this.props.id)}></i>
