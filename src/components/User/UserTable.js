@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import UserDataService from '../../service/UserDataService'
 import UserRow from './UserRow';
 
+
 class UserTable extends Component {
     constructor(props) {
         super(props);
@@ -25,6 +26,15 @@ class UserTable extends Component {
             )
     }
 
+    deteleUserClicked =(id)=>{
+        UserDataService.deleteUser(id).then(
+            response=>{
+                this.setState({message: `Delete of user ${id} Successful`});
+                this.refreshUsers()
+            }
+        )
+    }
+
     showUserTable =()=>
         this.state.users.map((value,key)=>(
             <UserRow
@@ -35,6 +45,7 @@ class UserTable extends Component {
             lastName={value.lastName}
             email={value.email}
             imageUrl1={value.imageUrl1}
+            deteleUserClicked={(id)=>this.deteleUserClicked(id)}
             />
         ))    
 
