@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import UserDataService from '../../service/UserDataService'
+import UserRow from './UserRow';
 
 class UserTable extends Component {
     constructor(props) {
@@ -23,6 +24,19 @@ class UserTable extends Component {
                 }
             )
     }
+
+    showUserTable =()=>
+        this.state.users.map((value,key)=>(
+            <UserRow
+            key={key}
+            id={value.id}
+            username={value.username}
+            firstName={value.firstName}
+            lastName={value.lastName}
+            email={value.email}
+            imageUrl1={value.imageUrl1}
+            />
+        ))    
 
 
 
@@ -50,7 +64,7 @@ class UserTable extends Component {
                                 </thead>
                                 <tbody>
                                     {
-                                        this.showShipper()
+                                        this.showUserTable()
                                     }
 
                                 </tbody>

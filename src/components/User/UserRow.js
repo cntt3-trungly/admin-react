@@ -5,14 +5,18 @@ class UserRow extends Component {
         return (
             < tr >
                 <td>{this.props.id}</td>
-                <td>{this.props.shipperName}</td>
-                <td>{this.props.phone}</td>
+                <td>{this.props.username}</td>
+                <td>{this.props.firstName}</td>
+                <td>{this.props.lastName}</td>
+                <td>{this.props.email}</td>
+                <td><img className="img-profile rounded-circle" style={{width: '2rem', height: '2rem'}} src={this.props.imageUrl1} /></td>
+
                 <td>
                     <a className="text-primary" >
                         <i className="fa fa-edit" ></i>
                     </a>
                     <a className="text-danger" >
-                        <i className="fa fa-trash" onClick={(id) => this.deleteDataClick(this.props.id)}></i>
+                        <i className="fa fa-trash"></i>
                     </a>
                 </td>
 
