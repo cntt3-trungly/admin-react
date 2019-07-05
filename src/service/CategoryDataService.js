@@ -25,8 +25,8 @@ class CategoryDataService {
         return axios.put(`${INSTRUCTOR_API_URL}/${id}`, category);
     }
 
-    deleteCategory(id) {
-        return axios.delete(`${INSTRUCTOR_API_URL}/${id}`);
+    deleteCategory(id, category) {
+        return axios.delete(`${INSTRUCTOR_API_URL}`, category);
     }
 
 }

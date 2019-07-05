@@ -49,11 +49,7 @@ class ProductTable extends Component {
                     description={value.description}
                     urlImage={value.urlImage}
                     unit={value.unit}
-                    deleteButtonClick={(id) => this.deleteProductClicked(id)}
-                   
-                />
-
-            ))
+                    deleteButtonClick={(id) => this.deleteProductClicked(id)}/> ))
 
         render() {
             console.log(this.state.products);
